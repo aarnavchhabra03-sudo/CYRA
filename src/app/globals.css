@@ -1,0 +1,614 @@
+@import "tailwindcss";
+
+/* ─── CYRA.AI — CENTRALIZED DUAL THEME TOKEN SYSTEM ─── */
+
+:root {
+  /* ─── DARK MODE COLOR SYSTEM ─── */
+  --cyra-bg:             #070B12;
+  --cyra-panel:          #0D1420;
+  --cyra-card:           #111B29;
+  --cyra-card-soft:      #111B29;
+  --cyra-elevated:       #162235;
+
+  --cyra-border:         #24344A;
+  --cyra-border-strong:  #31445C;
+
+  --cyra-text:           #F4F7FB;
+  --cyra-text-secondary: #A9B9CC;
+  --cyra-text-muted:     #71839A;
+
+  --cyra-cyan:           #22C7E8;
+  --cyra-cyan-bright:    #5EDBF0;
+  --cyra-soft-blue:      #8CC8FF;
+
+  --cyra-green:          #70D6B0;
+  --cyra-amber:          #F3C7A5;
+  --cyra-violet:         #A9A3FF;
+  --cyra-red:            #FF5A70;
+
+  /* Global Variable Aliases for Dark Mode */
+  --bg:                  #070B12;
+  --background:          #070B12;
+  --surface:             #070B12;
+  --surface-0:           #070B12;
+
+  --surface-raised:      #0D1420;
+  --surface-1:           #0D1420;
+
+  --surface-elevated:    #162235;
+  --surface-2:           #162235;
+
+  --surface-card:        #111B29;
+  --surface-hover:       #162235;
+  --surface-active:      #1C2A40;
+
+  --sidebar-bg:          #0D1420;
+  --sidebar-border:      #24344A;
+  --sidebar-text:        #F4F7FB;
+  --sidebar-text-muted:  #71839A;
+
+  --border:              #24344A;
+  --border-subtle:       #1A2838;
+  --border-medium:       #31445C;
+  --border-strong:       #3E5573;
+  --border-hover:        #22C7E8;
+  --border-focus:        #22C7E8;
+  --border-cyan:         rgba(34, 199, 232, 0.35);
+  --border-indigo:       rgba(169, 163, 255, 0.35);
+
+  --primary:             #A9A3FF;
+  --primary-bright:      #BEB9FF;
+  --primary-glow:        rgba(169, 163, 255, 0.12);
+
+  --secondary:           #22C7E8;
+  --cyan:                #22C7E8;
+  --cyan-bright:         #5EDBF0;
+  --cyan-glow:           rgba(34, 199, 232, 0.15);
+
+  --accent:              #A9A3FF;
+  --violet:              #A9A3FF;
+
+  --success:             #70D6B0;
+  --emerald:             #70D6B0;
+  --emerald-glow:        rgba(112, 214, 176, 0.10);
+
+  --warning:             #F3C7A5;
+  --amber:               #F3C7A5;
+  --amber-glow:          rgba(243, 199, 165, 0.12);
+
+  --danger:              #FF5A70;
+  --rose:                #FF5A70;
+
+  --text:                #F4F7FB;
+  --text-primary:        #F4F7FB;
+  --text-secondary:      #A9B9CC;
+  --muted:               #71839A;
+  --text-muted:          #71839A;
+
+  --shadow-sm:        0 1px 2px 0 rgba(0, 0, 0, 0.4);
+  --shadow-md:        0 4px 18px 0 rgba(0, 0, 0, 0.45);
+  --shadow-lg:        0 12px 30px 0 rgba(0, 0, 0, 0.55);
+
+  --sidebar-w:        256px;
+  --header-bg:        rgba(13, 20, 32, 0.90);
+  --header-bg-subtle: rgba(13, 20, 32, 0.75);
+
+  --user-bubble-bg:     rgba(34, 199, 232, 0.10);
+  --user-bubble-border: rgba(34, 199, 232, 0.30);
+  --user-bubble-text:   #F4F7FB;
+
+  --pastel-blue-bg:     rgba(34, 199, 232, 0.10);
+  --pastel-blue-text:   #8CC8FF;
+
+  --pastel-lavender-bg: rgba(169, 163, 255, 0.10);
+  --pastel-lavender-text: #A9A3FF;
+
+  --pastel-mint-bg:     rgba(112, 214, 176, 0.10);
+  --pastel-mint-text:   #70D6B0;
+
+  --pastel-peach-bg:    rgba(243, 199, 165, 0.10);
+  --pastel-peach-text:  #F3C7A5;
+}
+
+/* ─── DEDICATED LIGHT THEME TOKENS (CYRA LIGHT DESIGN SYSTEM) ─── */
+.light, [data-theme="light"] {
+  color-scheme: light;
+
+  /* Mandated Light Backgrounds & Surfaces */
+  --cyra-bg:             #F6F9FC;
+  --cyra-panel:          #FFFFFF;
+  --cyra-card:           #FFFFFF;
+  --cyra-card-soft:      #F0F5FA;
+  --cyra-elevated:       #FFFFFF;
+
+  --cyra-border:         #D9E2EC;
+  --cyra-border-strong:  #C5D2E0;
+
+  --cyra-text:           #172033;
+  --cyra-text-secondary: #42546A;
+  --cyra-text-muted:     #718198;
+
+  --cyra-cyan:           #149FC4;
+  --cyra-cyan-bright:    #118AAA;
+  --cyra-violet:         #7770D8;
+  --cyra-green:          #218A69;
+  --cyra-amber:          #C4871B;
+  --cyra-red:            #D45D6B;
+
+  /* Global Variable Aliases for Light Mode */
+  --bg:                  #F6F9FC;
+  --background:          #F6F9FC;
+  --surface:             #FFFFFF;
+  --surface-raised:      #FFFFFF;
+  --surface-elevated:    #FFFFFF;
+  --surface-card:        #FFFFFF;
+  --surface-hover:       #F0F5FA;
+  --surface-active:      #DCEEFF;
+
+  --sidebar-bg:          #FFFFFF;
+  --sidebar-border:      #D9E2EC;
+  --sidebar-text:        #172033;
+  --sidebar-text-muted:  #718198;
+
+  --border:              #D9E2EC;
+  --border-subtle:       #EBF0F6;
+  --border-medium:       #C5D2E0;
+  --border-strong:       #A3B6CC;
+  --border-hover:        #149FC4;
+  --border-focus:        #149FC4;
+  --border-cyan:         #C5DFF2;
+  --border-indigo:       #D9D5FB;
+
+  --primary:             #7770D8;
+  --primary-bright:      #6259B4;
+  --primary-glow:        rgba(119, 112, 216, 0.12);
+
+  --secondary:           #149FC4;
+  --cyan:                #149FC4;
+  --cyan-bright:         #118AAA;
+
+  --success:             #218A69;
+  --emerald:             #218A69;
+
+  --warning:             #C4871B;
+  --amber:               #C4871B;
+
+  --danger:              #D45D6B;
+  --rose:                #D45D6B;
+
+  --text:                #172033;
+  --text-primary:        #172033;
+  --text-secondary:      #42546A;
+  --muted:               #718198;
+  --text-muted:          #718198;
+
+  --shadow-sm:           0 2px 8px rgba(40, 70, 100, 0.04);
+  --shadow-md:           0 4px 18px rgba(40, 70, 100, 0.05);
+  --shadow-lg:           0 8px 30px rgba(40, 70, 100, 0.07);
+
+  --header-bg:           #FFFFFF;
+  --header-bg-subtle:    rgba(240, 245, 250, 0.85);
+
+  --user-bubble-bg:      #DCEEFF;
+  --user-bubble-border:  #C5DFF2;
+  --user-bubble-text:    #172033;
+
+  /* Pastel System Surfaces */
+  --pastel-blue-bg:      #EAF4FB;
+  --pastel-blue-text:    #286B91;
+
+  --pastel-lavender-bg:  #F0EEFF;
+  --pastel-lavender-text:#6259B4;
+
+  --pastel-mint-bg:      #EAF8F3;
+  --pastel-mint-text:    #218A69;
+
+  --pastel-peach-bg:     #FFF3E8;
+  --pastel-peach-text:   #B56C32;
+}
+
+/* SSR-safe sidebar collapsed state */
+html.sidebar-collapsed {
+  --sidebar-w: 68px;
+}
+
+@theme inline {
+  --color-background:  var(--bg);
+  --color-foreground:  var(--text-primary);
+  --color-primary:     var(--primary);
+  --color-secondary:   var(--secondary);
+  --color-accent:      var(--accent);
+  --color-success:     var(--success);
+  --color-warning:     var(--warning);
+  --color-danger:      var(--danger);
+  --color-muted:       var(--muted);
+  --font-sans:         var(--font-geist-sans), system-ui, sans-serif;
+  --font-mono:         var(--font-geist-mono), ui-monospace, monospace;
+}
+
+/* ─── Base Reset & Accessibility ────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--cyra-bg);
+  color: var(--cyra-text);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--cyra-bg);
+  color: var(--cyra-text);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Universal Focus States */
+:focus-visible {
+  outline: 2px solid var(--cyra-cyan);
+  outline-offset: 2px;
+  border-radius: var(--radius-xs);
+}
+
+/* Button Active Press Feedback */
+button:active, .os-button-primary:active, .os-button-secondary:active {
+  transform: scale(0.98);
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cyra-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--cyra-border);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cyra-border-strong);
+}
+
+/* ─── Reusable Design System Component Primitives ──────── */
+
+/* Glass Panel — theme-aware surface container */
+/* In Dark Mode: semi-transparent dark glassy panel      */
+/* In Light Mode: clean white card with subtle shadow    */
+.glass-panel {
+  background-color: var(--cyra-panel);
+  border-radius: 16px;
+}
+
+.light .glass-panel,
+[data-theme="light"] .glass-panel {
+  background-color: #FFFFFF;
+  box-shadow: 0 4px 18px rgba(40, 70, 100, 0.05);
+}
+
+/* Override zinc border utilities inside glass-panel in light mode */
+.light .glass-panel[class*="border-zinc"],
+[data-theme="light"] .glass-panel[class*="border-zinc"] {
+  border-color: #D9E2EC !important;
+}
+
+/* ─── Light Mode Global Utility Overrides ──────────────── */
+/* These ensure components using dark-hardcoded zinc classes */
+/* render correctly in light mode without per-file rewrites  */
+
+/* Text: white → near-black in light mode */
+.light .text-white,
+[data-theme="light"] .text-white {
+  color: #172033 !important;
+}
+
+/* Zinc text colors → proper light mode text */
+.light .text-zinc-400, .light .text-zinc-500,
+[data-theme="light"] .text-zinc-400, [data-theme="light"] .text-zinc-500 {
+  color: #718198 !important;
+}
+.light .text-zinc-300, .light .text-zinc-200,
+[data-theme="light"] .text-zinc-300, [data-theme="light"] .text-zinc-200 {
+  color: #42546A !important;
+}
+.light .text-zinc-600,
+[data-theme="light"] .text-zinc-600 {
+  color: #60758A !important;
+}
+
+/* Dark zinc backgrounds → white in light mode */
+.light .bg-zinc-900,
+.light .bg-zinc-950,
+[data-theme="light"] .bg-zinc-900,
+[data-theme="light"] .bg-zinc-950 {
+  background-color: #FFFFFF !important;
+}
+
+/* Zinc borders → light border in light mode */
+.light .border-zinc-800,
+.light .border-zinc-900,
+[data-theme="light"] .border-zinc-800,
+[data-theme="light"] .border-zinc-900 {
+  border-color: #D9E2EC !important;
+}
+
+/* bg-zinc-950/80, bg-zinc-950/40 → soft white in light mode */
+/* (Tailwind opacity modifiers can't be directly overridden in CSS,  */
+/*  but the bg-zinc-950 override above covers most cases)            */
+
+/* Emerald dark variants → light mint in light mode */
+.light .bg-emerald-950\/20,
+.light .border-emerald-500\/30,
+[data-theme="light"] .bg-emerald-950\/20,
+[data-theme="light"] .border-emerald-500\/30 {
+  background-color: #EAF8F3 !important;
+  border-color: #BDEBD9 !important;
+}
+.light .text-emerald-400,
+[data-theme="light"] .text-emerald-400 {
+  color: #218A69 !important;
+}
+.light .text-emerald-200,
+[data-theme="light"] .text-emerald-200 {
+  color: #218A69 !important;
+}
+
+/* Amber dark variants → light peach in light mode */
+.light .bg-amber-950\/10,
+.light .border-amber-900\/40,
+[data-theme="light"] .bg-amber-950\/10,
+[data-theme="light"] .border-amber-900\/40 {
+  background-color: #FFF3E8 !important;
+  border-color: #FCD8B8 !important;
+}
+.light .text-amber-300, .light .text-amber-400,
+[data-theme="light"] .text-amber-300, [data-theme="light"] .text-amber-400 {
+  color: #C4871B !important;
+}
+
+/* Indigo dark tints → light lavender in light mode */
+.light .bg-indigo-500\/10,
+[data-theme="light"] .bg-indigo-500\/10 {
+  background-color: #EAE7FF !important;
+}
+.light .border-indigo-500\/20, .light .border-indigo-500\/30,
+[data-theme="light"] .border-indigo-500\/20, [data-theme="light"] .border-indigo-500\/30 {
+  border-color: #D9D5FB !important;
+}
+.light .text-indigo-400, .light .text-indigo-300,
+[data-theme="light"] .text-indigo-400, [data-theme="light"] .text-indigo-300 {
+  color: #6259B4 !important;
+}
+.light .text-indigo-200,
+[data-theme="light"] .text-indigo-200 {
+  color: #6259B4 !important;
+}
+
+/* Cyan dark tints → light cyan in light mode */
+.light .text-cyan-400, .light .text-cyan-300,
+[data-theme="light"] .text-cyan-400, [data-theme="light"] .text-cyan-300 {
+  color: #149FC4 !important;
+}
+
+/* Red/rose dark tints → light rose in light mode */
+.light .bg-red-950\/40, .light .bg-red-950\/30,
+[data-theme="light"] .bg-red-950\/40, [data-theme="light"] .bg-red-950\/30 {
+  background-color: #FFF0F2 !important;
+}
+.light .border-red-900\/50,
+[data-theme="light"] .border-red-900\/50 {
+  border-color: #FDB8C0 !important;
+}
+.light .text-red-300, .light .text-red-400,
+[data-theme="light"] .text-red-300, [data-theme="light"] .text-red-400 {
+  color: #D45D6B !important;
+}
+
+/* bg-indigo-950, bg-purple-950 gradients → light lavender */
+.light [class*="from-indigo-950"],
+[data-theme="light"] [class*="from-indigo-950"] {
+  --tw-gradient-from: #F0EEFF var(--tw-gradient-from-position);
+}
+.light [class*="to-purple-950"],
+[data-theme="light"] [class*="to-purple-950"] {
+  --tw-gradient-to: #EAF4FB var(--tw-gradient-to-position);
+}
+
+.os-badge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.os-badge-cyan {
+  background-color: var(--pastel-blue-bg);
+  color: var(--pastel-blue-text);
+  border: 1px solid var(--cyra-border);
+}
+
+.os-badge-indigo, .os-badge-violet {
+  background-color: var(--pastel-lavender-bg);
+  color: var(--pastel-lavender-text);
+  border: 1px solid var(--cyra-border);
+}
+
+.os-badge-emerald, .os-badge-green {
+  background-color: var(--pastel-mint-bg);
+  color: var(--pastel-mint-text);
+  border: 1px solid var(--cyra-border);
+}
+
+.os-badge-amber {
+  background-color: var(--pastel-peach-bg);
+  color: var(--pastel-peach-text);
+  border: 1px solid var(--cyra-border);
+}
+
+.os-badge-rose, .os-badge-red {
+  background-color: rgba(212, 93, 107, 0.1);
+  color: var(--cyra-red);
+  border: 1px solid var(--cyra-border);
+}
+
+.os-badge-muted {
+  background-color: var(--cyra-card-soft);
+  color: var(--cyra-text-secondary);
+  border: 1px solid var(--cyra-border);
+}
+
+/* Level Card Hierarchy with Dynamic Light/Dark Shadows & Radius */
+.os-card, .os-card-l1 {
+  background-color: var(--cyra-panel);
+  border: 1px solid var(--cyra-border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), border-color 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+}
+
+.os-card-l2 {
+  background-color: var(--cyra-card);
+  border: 1px solid var(--cyra-border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+}
+
+.os-card-l3 {
+  background-color: var(--cyra-elevated);
+  border: 1px solid var(--cyra-border-strong);
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+}
+
+.os-card:hover {
+  border-color: var(--cyra-border-strong);
+  background-color: var(--cyra-elevated);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.os-card-active {
+  background-color: var(--cyra-elevated);
+  border-color: var(--cyra-cyan);
+}
+
+/* Precision Action Buttons */
+.os-button-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: var(--cyra-cyan);
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  border-radius: 10px;
+  border: none;
+  transition: transform 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+  cursor: pointer;
+}
+
+.os-button-primary:hover {
+  background-color: var(--cyra-cyan-bright);
+  box-shadow: 0 4px 14px rgba(20, 159, 196, 0.18);
+}
+
+.os-button-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: var(--cyra-panel);
+  color: var(--cyra-text);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  border-radius: 10px;
+  border: 1px solid var(--cyra-border-strong);
+  transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
+  cursor: pointer;
+}
+
+.os-button-secondary:hover {
+  background-color: var(--cyra-card-soft);
+  border-color: var(--cyra-cyan);
+  color: var(--cyra-cyan);
+}
+
+/* Form Inputs */
+.os-input {
+  width: 100%;
+  background-color: var(--cyra-card);
+  border: 1px solid var(--cyra-border-strong);
+  color: var(--cyra-text);
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 13px;
+  transition: border-color 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+  outline: none;
+}
+
+.os-input:focus {
+  border-color: var(--cyra-cyan);
+  background-color: var(--cyra-elevated);
+  box-shadow: 0 0 0 3px rgba(20, 159, 196, 0.10);
+}
+
+/* Restrained Motion Keyframes */
+@keyframes osPageEnter {
+  from { opacity: 0; transform: translateY(3px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes osModalEnter {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes osToastSlide {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-os-fade {
+  animation: osPageEnter 180ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-os-modal {
+  animation: osModalEnter 180ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-os-toast {
+  animation: osToastSlide 180ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
