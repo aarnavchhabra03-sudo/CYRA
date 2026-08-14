@@ -12,31 +12,33 @@ export async function GET(request: Request) {
       const { data, error } = await supabase.auth.exchangeCodeForSession(code);
 
       if (!error && data?.user) {
-        // Ensure profile exists in profiles table
-        const { data: existingProfile } = await supabase
-          .from('profiles')
-          .select('id')
-          .eq('id', data.user.id)
-          .single();
+  // Ensure profile exists in profiles table
+  const { data: existingProfile } = await supabase
+    .from('profiles')
+    .select('id')
+    .eq('id', data.user.id)
+    .single();
 
-        if (!existingProfile) {
-          const meta = data.user.user_metadata || {};
-          const fullName = meta.full_name || meta.name || (data.user.email ? data.user.email.split('@')[0] : 'Learner');
+  if (!existingProfile) {
+    const meta = data.user.user_metadata || {};
 
-          await supabase.from('profiles').insert({
-            id: data.user.id,
-            full_name: fullName,
-            avatar_url: meta.avatar_url || meta.picture || null,
-            updated_at: new Date().toISOString(),
-          });
-        }
+    const fullName =
+      meta.full_name ||
+      meta.name ||
+      (data.user.email
+        ? data.user.email.split('@')[0]
+        : 'Learner');
 
-        return NextResponse.redirect(`${origin}/dashboard`);
-      }
-    } catch (err) {
-      console.error('[AUTH CALLBACK] Exception during OAuth callback exchange:', err);
-    }
+    await supabase.from('profiles').insert({
+      id: data.user.id,
+      full_name: fullName,
+      avatar_url: meta.avatar_url || meta.picture || null,
+      updated_at: new Date().toISOString(),
+    });
   }
+
+  return NextResponse.redirect(`${origin}/`);
+}
 
   // Fallback redirection to login page with error state
   return NextResponse.redirect(`${origin}/login?error=auth_callback_failed`);
