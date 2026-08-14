@@ -4,7 +4,7 @@ import { createClient } from '@/lib/supabase/server';
 export async function GET(request: Request) {
   const { searchParams, origin } = new URL(request.url);
   const code = searchParams.get('code');
-  const next = searchParams.get('next') ?? '/';
+  const next = searchParams.get('next') ?? '/dashboard';
 
   if (code) {
     try {
@@ -31,7 +31,7 @@ export async function GET(request: Request) {
           });
         }
 
-        return NextResponse.redirect(`${origin}${next}`);
+        return NextResponse.redirect(`${origin}/dashboard`);
       }
     } catch (err) {
       console.error('[AUTH CALLBACK] Exception during OAuth callback exchange:', err);
