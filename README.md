@@ -450,9 +450,7 @@ Research Intelligence OS for Adaptive Learning.
 
 Built with curiosity, AI, research, and a desire to rethink how humans learn.
 
-<p align="center">
-🧠 Research → Intelligence → Learning
 
-CYRA.AI
-</p>
-```
+                                    **🧠 Research → Intelligence → Learning**
+                                       
+                                                   **CYRA.AI**
