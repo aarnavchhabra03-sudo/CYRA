@@ -32,7 +32,16 @@ import {
 } from '@/types/ai';
 
 // Centralized Groq model definition
-export const GROQ_MODEL = 'llama-3.3-70b-versatile';
+// Groq production model used by CYRA.
+// GPT-OSS 120B is currently supported by Groq and supports JSON output.
+const DEFAULT_GROQ_MODEL = 'openai/gpt-oss-120b';
+
+const configuredGroqModel = process.env.GROQ_MODEL?.trim();
+
+export const GROQ_MODEL =
+  configuredGroqModel === 'openai/gpt-oss-120b'
+    ? configuredGroqModel
+    : DEFAULT_GROQ_MODEL;
 
 export function validateStudyNotes(data: any): data is StudyNotesData {
   if (!data || typeof data !== 'object') return false;
